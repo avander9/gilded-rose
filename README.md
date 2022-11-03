@@ -3,10 +3,10 @@ Esta es una adaptación del ejercicio original: https://github.com/Steve-Fenton/
 ## Instrucciones
 
 1. Crea un fork de main 😎
-2. Obra tu mágia haciendo el ## Ejercicio 👨‍💻
+2. Obra tu mágia haciendo el [Ejercicio](#ejercicio) 👨‍💻
 3. Cuando hayas acabado crea una PR para que la podamos revisar 🤓
 
-## Ejercicio
+## <a name="ejercicio"></a> Ejercicio
 
 Partimos de un "Legacy Code" que sabemos que funciona gracias a una bateria de pruebas y que debemos refactorizar.
 
