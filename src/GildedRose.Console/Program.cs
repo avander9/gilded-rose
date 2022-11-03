@@ -30,41 +30,15 @@ namespace GildedRose.Console
         {
             for (var i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Name != "Aged Brie")
-                {
-                    if (Items[i].Quality > 0)
-                    {
-                        Items[i].Quality = Items[i].Quality - 1;
-                    }
-                }
-                else
-                {
-                    if (Items[i].Quality < 50)
-                    {
-                        Items[i].Quality = Items[i].Quality + 1;
-                    }
-                }
 
-                Items[i].SellIn = Items[i].SellIn - 1;
+                Items[i].SellIn--;
+                int sellInValue = Items[i].SellIn < 0 ? 2 : 1;
 
-                if (Items[i].SellIn < 0)
-                {
-                    if (Items[i].Name != "Aged Brie")
-                    {
+                if (Items[i].Name != "Aged Brie" && Items[i].Quality > 0)
+                    Items[i].Quality = Items[i].Quality - sellInValue < 0 ? 0 : Items[i].Quality - sellInValue;
+                else if (Items[i].Quality < 50 && Items[i].Name == "Aged Brie")
+                    Items[i].Quality = Items[i].Quality + sellInValue > 50 ? 50 : Items[i].Quality + sellInValue;
 
-                        if (Items[i].Quality > 0)
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
-                    else
-                    {
-                        if (Items[i].Quality < 50)
-                        {
-                            Items[i].Quality = Items[i].Quality + 1;
-                        }
-                    }
-                }
                 Items[i].Price = Math.Round(Items[i].Quality * 1.9M, 2);
             }
         }
